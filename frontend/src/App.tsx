@@ -64,7 +64,7 @@ function App() {
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-10">
           <a href="#top" className="flex items-center gap-3 text-sm font-semibold tracking-tight">
             <span className="grid h-7 w-7 place-items-center rounded-full bg-[#e7a84b] text-xs font-bold text-[#17130d]">A</span>
-            
+            AMEY DEORUKHKAR
           </a>
           <div className="hidden items-center gap-9 text-[11px] font-medium uppercase tracking-[0.16em] text-white/55 md:flex">
             <a className="transition hover:text-[#e7a84b]" href="#work">Selected work</a>
@@ -83,6 +83,17 @@ function App() {
       <main id="top" className="mx-auto max-w-7xl px-6 lg:px-10">
         <section className="relative flex min-h-[780px] flex-col justify-center pb-20 pt-36 lg:min-h-[860px]">
           <div className="pointer-events-none absolute -right-40 top-32 h-[580px] w-[580px] rounded-full bg-[#e7a84b]/[0.08] blur-[120px]" />
+          <div className="hero-portrait" aria-label="Portrait of Amey Sharma">
+            <div className="hero-portrait-fallback">AS</div>
+            <img
+              src="/amey.jpg"
+              alt="Portrait of Amey Sharma"
+              onError={(event) => {
+                event.currentTarget.style.display = 'none'
+              }}
+            />
+            <span className="hero-portrait-label">Full-stack / GenAI engineer</span>
+          </div>
           <p className="mb-8 flex items-center gap-3 text-[11px] uppercase tracking-[0.2em] text-[#e7a84b]">
             <span className="h-px w-8 bg-[#e7a84b]" /> Full-stack · GenAI · Data
           </p>
@@ -176,7 +187,7 @@ function App() {
       </main>
 
       <footer className="border-t border-white/10 px-6 py-8 text-xs text-white/30 lg:px-10">
-        <div className="mx-auto flex max-w-7xl justify-between"><span>© 2026 </span><span>Built for the next thing.</span></div>
+        <div className="mx-auto flex max-w-7xl justify-between"><span>© 2026 Amey Sharma</span><span>Built for the next thing.</span></div>
       </footer>
 
       {paletteOpen && (

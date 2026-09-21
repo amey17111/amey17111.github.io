@@ -1,1 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;1,400&display=swap');
 @import "tailwindcss";
+
+:root { font-family: 'DM Sans', sans-serif; background: #0d0d0c; color: #f1f0ec; font-synthesis: none; }
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; }
+::selection { background: #e7a84b; color: #17130d; }
+.eyebrow { color: #e7a84b; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; }
+.project-card { min-height: 520px; border-radius: 16px; border: 1px solid rgba(255,255,255,.1); padding: 24px; display: flex; flex-direction: column; background: #141412; transition: transform .3s, border-color .3s; }
+.project-card:hover { transform: translateY(-5px); border-color: rgba(231,168,75,.55); }
+.project-card.blue { background: #111518; }
+.project-card.violet { background: #141215; }
+.project-art { height: 190px; margin: 28px -24px 30px; position: relative; overflow: hidden; background: radial-gradient(circle at 50% 50%, rgba(231,168,75,.25), transparent 55%); }
+.blue .project-art { background: radial-gradient(circle at 50% 50%, rgba(94,179,213,.23), transparent 55%); }
+.violet .project-art { background: radial-gradient(circle at 50% 50%, rgba(175,115,220,.25), transparent 55%); }
+.project-art span { position: absolute; border: 1px solid rgba(255,255,255,.24); border-radius: 50%; width: 145px; height: 145px; left: calc(50% - 72px); top: 22px; transform: rotate(25deg) scaleX(.45); }
+.project-art span:nth-child(2) { transform: rotate(85deg) scaleX(.45); }
+.project-art span:nth-child(3) { transform: rotate(145deg) scaleX(.45); }
+.tag { border: 1px solid rgba(255,255,255,.13); border-radius: 999px; padding: 5px 9px; font-family: 'DM Mono', monospace; font-size: 10px; color: rgba(255,255,255,.5); }
+button, a { cursor: pointer; }

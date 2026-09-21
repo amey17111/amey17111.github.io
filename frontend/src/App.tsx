@@ -1,16 +1,28 @@
-function App() {
+import { useCallback, useState } from "react"
+import { Outlet } from "react-router"
+import { ChatDrawer } from "./components/ChatDrawer"
+import { CommandPalette } from "./components/CommandPalette"
+import { Footer, Header } from "./components/Layout"
+
+export default function App() {
+  const [palette, setPalette] = useState(false)
+  const [ask, setAsk] = useState(false)
+  const openPalette = useCallback(() => setPalette(true), [])
+  const openAsk = useCallback(() => setAsk(true), [])
+
   return (
-    <main className="min-h-screen bg-slate-950 px-6 py-16 text-white">
-      <div className="mx-auto max-w-3xl rounded-2xl border border-slate-800 bg-slate-900/70 p-8 shadow-2xl">
-        <h1 className="text-4xl font-bold tracking-tight text-cyan-300">
-          Amey commit new test1 amey cname
-        </h1>
-        <p className="mt-4 text-lg text-slate-300">
-          starting the build 
-        </p>
-      </div>
-    </main>
+    <div className="flex min-h-screen flex-col bg-ink text-paper">
+      <Header onCommand={openPalette} onAsk={openAsk} />
+      <main className="flex-1">
+        <Outlet />
+      </main>
+      <Footer />
+      <CommandPalette
+        open={palette}
+        onOpenChange={setPalette}
+        onAsk={openAsk}
+      />
+      <ChatDrawer open={ask} onClose={() => setAsk(false)} />
+    </div>
   )
 }
-
-export default App

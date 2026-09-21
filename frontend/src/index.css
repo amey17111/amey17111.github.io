@@ -1,1 +1,40 @@
 @import "tailwindcss";
+
+@theme {
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  --color-ink: #070705;
+  --color-ink-2: #0e0d0a;
+  --color-panel: #14120e;
+  --color-line: #2a261c;
+  --color-mute: #9a917f;
+  --color-paper: #f3eee4;
+  --color-amber: #e8a54b;
+  --color-copper: #c47a3a;
+  --color-amber-dim: color-mix(in oklab, var(--color-amber) 14%, transparent);
+
+  --ease-mech: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--color-ink);
+  color: var(--color-paper);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: color-mix(in oklab, var(--color-amber) 40%, black);
+  color: var(--color-paper);
+}
+
+#root {
+  min-height: 100vh;
+}
